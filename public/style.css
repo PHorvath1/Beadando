@@ -1,0 +1,17 @@
+body{
+    background-color: rgb(221, 161, 81);
+}
+
+header{
+    height: 150px;
+    background-color: #EBC64B;
+    border-style: groove;
+    border-width: 5px;
+    border-color: #F5BE4E;
+}
+nav{
+    background-color: #F5BE4E;
+    border-style: groove;
+    border-width: 5px;
+    border-color: #F5BE4E;
+}
