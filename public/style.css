@@ -44,3 +44,12 @@ a:hover{
     float: right;
 }
 
+header div{
+    background-color: rgb(220,170,100);
+    border-style: solid;
+    border-width: 1px;
+    width: 150px;
+    margin-top: 120px;
+    float: right;
+}
+

@@ -8,6 +8,12 @@
             require_once PROTECTED_DIR.'normal/home.php';
             break;
 
+        case 'forum':
+            IsUserLoggedIn() ?
+            require_once PROTECTED_DIR.'forum.php' :
+            header('Location: index.php');
+            break;
+
         case 'login':
             !IsUserLoggedIn() ?
             require_once PROTECTED_DIR.'users/login.php' :
