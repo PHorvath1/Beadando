@@ -14,6 +14,12 @@
             header('Location: index.php');
             break;
 
+        case 'new_post':
+            IsUserLoggedIn() ?
+            require_once PROTECTED_DIR.'posts/add.php' :
+            header('Location: index.php');
+            break;
+
         case 'login':
             !IsUserLoggedIn() ?
             require_once PROTECTED_DIR.'users/login.php' :
