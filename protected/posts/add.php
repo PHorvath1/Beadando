@@ -12,8 +12,7 @@
         if (empty($_POST['title']) || empty($_POST['content'])) {
             echo "Hiányzó cím vagy tartalom!";
         } else {
-            require_once DATABASE_CONTROLLER;
-            $getDate = getRecord("SELECT TO_CHAR(SELECT NOW())"); 
+            $getDate = date('Y-m-d H:i:s'); 
             $query = "INSERT INTO posts (uid,title,content,date) VALUES (:uid,:title,:content,:date)";
             $params = [
                 ':uid' => $_SESSION['uid'],
@@ -21,9 +20,10 @@
                 ':content' => $postData['content'],
                 ':date' => $getDate
             ];
+            require_once DATABASE_CONTROLLER;
             if(!executeDML($query, $params)) {
                 echo "Hiba az adatbevitel során";
-            } header("Location: index.php");
+            } header("Location: index.php?P=forum");
         }
         ?>
         <div class="form-row">

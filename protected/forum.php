@@ -1,5 +1,5 @@
 <?php 
-    $query="SELECT title,content,date FROM posts";
+    $query="SELECT uid,title,content,date FROM posts";
     require_once DATABASE_CONTROLLER;
     $posts = getList($query);
 
@@ -9,7 +9,7 @@
     <div id="recentPosts">
         <table>
             <thead>Recent Posts:</thead>
-            <?php $query="SELECT id,date,title FROM posts ORDER BY id desc";
+            <?php $query="SELECT date,title FROM posts ORDER BY date desc";
                 $recentPost=getRecord($query);
             ?>
             <p>
@@ -22,12 +22,19 @@
             <h1>There are no posts to show</h1>
         <?php else : ?>
             <?php $i = 0; ?>
+            <?php $postedBy = ""?>
             <?php foreach ($posts as $p) : ?>
                 <?php $i++;?>
+                <?php 
+                    $query = "SELECT first_name FROM users WHERE id=".$p['uid'];
+                    $postedBy = getRecord($query);
+                ?>
                 <div id="posts">
                     <h3><?=$p['title']?></h3>
                     <h4><?=$p['content']?></h4>
-                    <h6>Posted on: <?=$p['date']?></h6>
+                    <hr>
+                    <h6>Posted by: <?=$postedBy['first_name']?></h6>
+                    <h6>on: <?=$p['date']?></h6>
                 </div>
             <?php endforeach; ?>
         <?php endif; ?>

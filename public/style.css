@@ -61,7 +61,6 @@ header div{
     border-color: black;
     border-width: 2px;
     margin: 10px;
-    margin-top: 5%;
     float: left;
     font-style: oblique;
     color: white;
@@ -72,7 +71,6 @@ header div{
     background-color: rgb(199, 123, 53);
     width: 80%;
     margin: 10px;
-    margin-top: 5%;
     border-color: rgb(73, 73, 73);
     border-style: groove;
     border-radius: 10px;
