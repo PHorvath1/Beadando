@@ -54,8 +54,7 @@ header div{
 }
 
 #recentPosts{
-    width: 200px;
-    height: 125px;
+    width: 300px;
     background-color: rgb(88, 65, 21);
     border-style: solid;
     border-color: black;
@@ -64,10 +63,15 @@ header div{
     float: left;
     font-style: oblique;
     color: white;
+    overflow: auto;
+}
+#recentLink{
+    color: white;
+    background-color: unset;
+    border: unset;
 }
 
 #forum {
-    float: right;
     background-color: rgb(199, 123, 53);
     width: 80%;
     margin: 10px;
@@ -76,18 +80,45 @@ header div{
     border-radius: 10px;
     border-width: 5px;
     overflow: auto;
-
 }
 
 #forumpage{
     margin-top: 5px;
     background-color: rgba(120, 120, 120, 0.3);
-    height: 70%;
+    height: max-content;
+    
 }
 #posts{
+    background-color: rgba(170, 170, 170, 0.1);
     border-bottom-style: solid;
-    border-bottom-color: black;
+    border-right-style: solid;
     border-bottom-width: 1px;
+    border-right-width: 1px;
+    border-bottom-color: black;
+    border-right-color: black;
+    border-bottom-right-radius: 5px;
+    margin-bottom: 0.5%;
+    margin-top: 1%;
+    overflow: auto;
+}
+
+#comments{
+    background-color: rgba(205, 205, 205, 0.5);
+    width: 50%;
+    border-bottom-style: solid;
+    border-right-style: solid;
+    border-bottom-width: 1px;
+    border-right-width: 1px;
+    border-bottom-color: black;
+    border-right-color: black;
+    border-bottom-right-radius: 15px;
+    padding-left: 5px;
+}
+
+#notLoggedIn{
+    background-color: unset;
+    border: unset;
+    float: unset;
 }
 
 #addPost{

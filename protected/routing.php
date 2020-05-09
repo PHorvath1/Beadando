@@ -20,6 +20,12 @@
             header('Location: index.php');
             break;
 
+        case 'add_comment':
+            IsUserLoggedIn() ?
+            require_once PROTECTED_DIR.'comments/add.php':
+            header('Location: index.php');
+            break;
+
         case 'login':
             !IsUserLoggedIn() ?
             require_once PROTECTED_DIR.'users/login.php' :
