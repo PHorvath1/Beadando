@@ -32,6 +32,12 @@
             header('Location: index.php');
             break;
 
+        case 'list_user':
+            IsUserLoggedIn() ?
+            require_once PROTECTED_DIR.'users/list.php' :
+            header('Location: index.php');
+            break;
+
         case 'register':
             !IsUserLoggedIn() ?
             require_once PROTECTED_DIR.'users/register.php' :
